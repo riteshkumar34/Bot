@@ -28,6 +28,7 @@ export const Message=async(req,res)=>{
   "i love you": "That’s sweet! I’m here to help you anytime.",
   "where are you from": "I live in the cloud — no rent, no bills!",
   "what can you do": "I can chat with you, answer questions, and keep you company.",
+  "who ia ubiquity sinha ray?":"She belongs from kharagpur West Bengal. She has done Btech in CSE from Delhi technical Campus(2023-27) and 10th 12th from IIT DAV model school Kharagpur she is a brilliant student",
 
  "what is python": "Python is a high-level, interpreted programming language known for simplicity and versatility.\n• Easy to read/write due to clean syntax (similar to English)\n• Dynamically typed and supports multiple paradigms (OOP, functional, procedural)\n• Extensive libraries for AI, data science, web, automation\n• Example: Used in Google, YouTube, Instagram, and machine learning applications",
 
