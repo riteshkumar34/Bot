@@ -19,6 +19,8 @@
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "mongoose": "^8.17.1",
-    "nodemon": "^3.1.10"
+    "natural": "^8.1.0",
+    "nodemon": "^3.1.10",
+    "string-similarity": "^4.0.4"
   }
 }
