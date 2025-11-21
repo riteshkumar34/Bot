@@ -1,6 +1,6 @@
 import Bot from "../models/bot.model.js";
 import User from "../models/user.model.js";
-import stringSimilarity from "string-similarity";
+import { compareTwoStrings, findBestMatch } from "string-similarity";
 import { readFileSync } from "fs";
 
 
