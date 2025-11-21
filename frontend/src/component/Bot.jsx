@@ -18,7 +18,7 @@ export default function Bot() {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:4002/bot/v1/message", {
+      const res = await axios.post("http://localhost:4002/api/v1/message", {
         text: input,
       });
 

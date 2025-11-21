@@ -11,7 +11,11 @@ const port =process.env.PORT || 3000
 
 // middleware
 app.use(express.json());
-app.use(cors())
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST"],
+}));
+
 
 //Database Connection code
 mongoose.connect(process.env.MONGO_URI)
@@ -22,7 +26,8 @@ mongoose.connect(process.env.MONGO_URI)
 })
 
 // Defining Routes
-app.use("/bot/v1/", chatbotRoutes)
+app.use("/api/v1/", chatbotRoutes)
+
 
 app.listen(port, () => {
   console.log(`Server is Running on Port ${port}`)
