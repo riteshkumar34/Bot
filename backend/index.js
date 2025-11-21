@@ -1,34 +1,42 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import mongoose from 'mongoose';
-import cors from 'cors';
-import chatbotRoutes from './routes/chatbot.route.js';
+import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import cors from "cors";
+import chatbotRoutes from "./routes/chatbot.route.js";
 
-const app = express()
-dotenv.config()
+dotenv.config();
+const app = express();
 
-const port =process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 
-// middleware
+// MIDDLEWARE
 app.use(express.json());
-app.use(cors({
-  origin: "",
-  methods: ["GET", "POST"],
-}));
 
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",               // local frontend
+      "http://localhost:3000",
+      "https://stresschat7.vercel.app",      // your vercel frontend (when deployed)
+    ],
+    methods: ["GET", "POST"],
+  })
+);
 
-//Database Connection code
-mongoose.connect(process.env.MONGO_URI)
-.then(()=>{
-    console.log("Connected to MongoDB")
-}).catch((error)=>{
-    console.log("Error connecting to MongoDB:", error)
-})
+// DATABASE
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.log("MongoDB Error:", err));
 
-// Defining Routes
-app.use("/api/v1/", chatbotRoutes)
+// ROUTES
+app.use("/api/v1/chat", chatbotRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Backend Running Successfully!");
+});
 
+// SERVER
 app.listen(port, () => {
-  console.log(`Server is Running on Port ${port}`)
-})
+  console.log(`Server running on port ${port}`);
+});
