@@ -17,7 +17,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:3000",
-      "https://bot-git-main-riteshkumar34s-projects.vercel.app" // ❌ last slash remove
+      "https://bot-git-main-riteshkumar34s-projects.vercel.app" 
     ],
     methods: "GET,POST,PUT,DELETE,OPTIONS",
     allowedHeaders: "Content-Type, Authorization",
