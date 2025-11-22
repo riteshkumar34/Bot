@@ -17,10 +17,10 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:3000",
-      "https://stresschat-git-main-riteshkumar34s-projects.vercel.app" 
+      "https://stresschat-git-main-riteshkumar34s-projects.vercel.app"
     ],
-    methods: "GET,POST,PUT,DELETE,OPTIONS",
-    allowedHeaders: "Content-Type, Authorization",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],   // ✅ FIXED
+    allowedHeaders: ["Content-Type", "Authorization"],      // ✅ FIXED
     credentials: true,
   })
 );
